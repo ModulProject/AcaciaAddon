@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "acaciaddon:compressed_acacia_2"
+    }
+  },
+  "result": {
+    "item": "acaciaddon:compressed_acacia_3"
+  }
+}

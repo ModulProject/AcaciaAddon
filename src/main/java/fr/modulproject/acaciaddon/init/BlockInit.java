@@ -27,13 +27,22 @@ public class BlockInit {
         return BLOCK;
     }
 
-    public static final RegistryObject<Block> COMPRESSED_ACACIA;
+    public static final RegistryObject<Block> COMPRESSED_ACACIA_1;
+    public static final RegistryObject<Block> COMPRESSED_ACACIA_2;
+    public static final RegistryObject<Block> COMPRESSED_ACACIA_3;
+    public static final RegistryObject<Block> COMPRESSED_ACACIA_4;
 
     static {
         Block block = null;
 
         block = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD).hardnessAndResistance(9f).harvestTool(ToolType.AXE));
-        COMPRESSED_ACACIA = register("compressed_acacia_1", block, ItemGroup.DECORATIONS);
+        COMPRESSED_ACACIA_1 = register("compressed_acacia_1", block, ItemGroup.DECORATIONS);
+        block = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD).hardnessAndResistance(9f).harvestTool(ToolType.AXE));
+        COMPRESSED_ACACIA_2 = register("compressed_acacia_2", block, ItemGroup.DECORATIONS);
+        block = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD).hardnessAndResistance(9f).harvestTool(ToolType.AXE));
+        COMPRESSED_ACACIA_3 = register("compressed_acacia_3", block, ItemGroup.DECORATIONS);
+        block = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD).hardnessAndResistance(9f).harvestTool(ToolType.AXE));
+        COMPRESSED_ACACIA_4 = register("compressed_acacia_4", block, ItemGroup.DECORATIONS);
     }
 
 }
