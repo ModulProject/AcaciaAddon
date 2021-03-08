@@ -35,13 +35,13 @@ public class BlockInit {
     static {
         Block block = null;
 
-        block = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD).hardnessAndResistance(9f).harvestTool(ToolType.AXE));
+        block = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD).hardnessAndResistance(8f).harvestTool(ToolType.AXE));
         COMPRESSED_ACACIA_1 = register("compressed_acacia_1", block, ItemGroup.DECORATIONS);
-        block = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD).hardnessAndResistance(9f).harvestTool(ToolType.AXE));
+        block = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD).hardnessAndResistance(10f).harvestTool(ToolType.AXE));
         COMPRESSED_ACACIA_2 = register("compressed_acacia_2", block, ItemGroup.DECORATIONS);
-        block = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD).hardnessAndResistance(9f).harvestTool(ToolType.AXE));
+        block = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD).hardnessAndResistance(12f).harvestTool(ToolType.AXE));
         COMPRESSED_ACACIA_3 = register("compressed_acacia_3", block, ItemGroup.DECORATIONS);
-        block = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD).hardnessAndResistance(9f).harvestTool(ToolType.AXE));
+        block = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD).hardnessAndResistance(14f).harvestTool(ToolType.AXE));
         COMPRESSED_ACACIA_4 = register("compressed_acacia_4", block, ItemGroup.DECORATIONS);
     }
 
