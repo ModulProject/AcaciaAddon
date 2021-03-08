@@ -1,7 +1,11 @@
 package fr.modulproject.acaciaddon;
 
-import fr.modulproject.acaciaddon.init.BlockInit;
-import fr.modulproject.acaciaddon.init.ItemInit;
+import fr.modulproject.acaciaddon.containers.AcaciaEnricherContainer;
+import fr.modulproject.acaciaddon.init.ModBlocks;
+import fr.modulproject.acaciaddon.init.ModItems;
+import fr.modulproject.acaciaddon.init.ModContainers;
+import fr.modulproject.acaciaddon.screen.AcaciaEnricherScreen;
+import net.minecraft.client.gui.ScreenManager;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -21,12 +25,13 @@ public class Main {
 
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        BlockInit.BLOCKS.register(bus);
-        ItemInit.ITEMS.register(bus);
+        ModBlocks.BLOCKS.register(bus);
+        ModItems.ITEMS.register(bus);
+        ModContainers.CONTAINERS.register(bus);
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
-
+        ScreenManager.registerFactory(ModContainers.ACACIA_ENRICHER_CONTAINER.get(), AcaciaEnricherScreen::new);
     }
 
 }

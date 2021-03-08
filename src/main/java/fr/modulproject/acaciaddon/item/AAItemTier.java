@@ -1,6 +1,6 @@
 package fr.modulproject.acaciaddon.item;
 
-import fr.modulproject.acaciaddon.init.BlockInit;
+import fr.modulproject.acaciaddon.init.ModBlocks;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyValue;
@@ -11,7 +11,7 @@ import net.minecraft.util.LazyValue;
 
 public enum AAItemTier implements IItemTier {
 
-    ACACIA (1, 1085, 5.0f, 0f, 8, new LazyValue<>(() -> Ingredient.fromItems(BlockInit.COMPRESSED_ACACIA_2.get())));
+    ACACIA (1, 1085, 5.0f, 0f, 8, new LazyValue<>(() -> Ingredient.fromItems(ModBlocks.COMPRESSED_ACACIA_2.get())));
 
     private final int harvestLevel;
     private final int maxUses;

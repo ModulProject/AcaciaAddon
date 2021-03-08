@@ -7,7 +7,12 @@
   "block.acaciaddon.compressed_acacia_6": "Sextuple Compressed Acacia",
   "block.acaciaddon.compressed_acacia_7": "Septuple Compressed Acacia",
   "block.acaciaddon.compressed_acacia_8": "Octuple Compressed Acacia",
+  "block.acaciaddon.acacia_enricher": "Acacia Enricher",
 
   "item.acaciaddon.acaciaxe": "AcaciAxe",
-  "item.acaciaddon.acacia_stick": "Acacia Stick"
+  "item.acaciaddon.acacia_stick": "Acacia Stick",
+
+  "itemGroup.acaciaddon": "AcaciAddon",
+
+  "container.acacia_enricher": "Acacia Enricher"
 }

@@ -1,5 +1,6 @@
 package fr.modulproject.acaciaddon.item;
 
+import fr.modulproject.acaciaddon.utils.AcaciAddonCreativeTab;
 import fr.modulproject.acaciaddon.utils.NBTTag;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -28,11 +29,11 @@ public class AcaciAxe extends AxeItem {
     private static Set<Material> EFFECTIVE_ON_MATERIALS;
     private static Set<Block> EFFECTIVE_ON_BLOCK;
 
-    public static final String XP_KEY = "Uses";
+    public static final String XP_KEY = "XP";
     private static final int[] LEVEL_XP = new int[] {80, 270, 650, 1800, 4250, 9900, 21000, 66000, 130000, 250000};
 
     public AcaciAxe() {
-        super(AAItemTier.ACACIA, 8, -2.8f, (new Item.Properties()).group(ItemGroup.TOOLS));
+        super(AAItemTier.ACACIA, 8, -2.8f, (new Item.Properties()).group(AcaciAddonCreativeTab.ACACIADDON_TAB));
     }
 
     @Override
@@ -42,6 +43,17 @@ public class AcaciAxe extends AxeItem {
             xp.set(IntNBT.valueOf(xp.get().getInt()+1));
         }
         return super.onBlockDestroyed(stack, worldIn, state, pos, entityLiving);
+    }
+
+    @Override
+    public boolean showDurabilityBar(ItemStack stack) {
+        NBTTag<IntNBT> xpTag = new NBTTag<>(stack, XP_KEY, IntNBT.valueOf(0));
+        int xp = xpTag.get().getInt();
+        if(getLevel(xp) >= getMaxLevel()) {
+            stack.setDamage(0);
+            return false;
+        }
+        return super.showDurabilityBar(stack);
     }
 
     @Override
