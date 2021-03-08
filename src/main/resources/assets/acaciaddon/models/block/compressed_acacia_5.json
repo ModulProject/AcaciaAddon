@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:block/cube_column",
+    "textures": {
+        "end": "acaciaddon:block/compressed_acacia_5_top",
+        "side": "acaciaddon:block/compressed_acacia_1"
+    }
+}

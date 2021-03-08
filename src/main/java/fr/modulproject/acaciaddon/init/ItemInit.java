@@ -3,6 +3,7 @@ package fr.modulproject.acaciaddon.init;
 import fr.modulproject.acaciaddon.Main;
 import fr.modulproject.acaciaddon.item.AcaciAxe;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -16,5 +17,7 @@ public class ItemInit {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Main.MODID);
 
     public static final RegistryObject<Item> ACACIAXE = ITEMS.register("acaciaxe", AcaciAxe::new);
+    public static final RegistryObject<Item> ACACIA_STICK = ITEMS.register("acacia_stick", () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+
 
 }

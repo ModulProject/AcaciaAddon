@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "acaciaddon:block/compressed_acacia_7" },
+        "axis=z":   { "model": "acaciaddon:block/compressed_acacia_7", "x": 90 },
+        "axis=x":   { "model": "acaciaddon:block/compressed_acacia_7", "x": 90, "y": 90 }
+    }
+}
