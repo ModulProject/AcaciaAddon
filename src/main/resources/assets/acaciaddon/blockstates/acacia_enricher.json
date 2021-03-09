@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "acaciaddon:block/acacia_enricher",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "acaciaddon:block/acacia_enricher"
+    },
+    "facing=south": {
+      "model": "acaciaddon:block/acacia_enricher",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "acaciaddon:block/acacia_enricher",
+      "y": 270
+    }
+  }
+}

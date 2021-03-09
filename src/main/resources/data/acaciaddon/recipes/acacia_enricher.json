@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XIX",
+    "XOX",
+    "XAX"
+  ],
+  "key": {
+    "X": {
+      "item": "acaciaddon:compressed_acacia_4"
+    },
+    "I": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "O": {
+      "item": "minecraft:black_stained_glass_pane"
+    },
+    "A": {
+      "item": "minecraft:anvil"
+    }
+  },
+  "result": {
+    "item": "acaciaddon:acacia_enricher"
+  }
+}

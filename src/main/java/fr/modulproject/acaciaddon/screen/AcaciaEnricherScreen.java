@@ -36,5 +36,23 @@ public class AcaciaEnricherScreen extends ContainerScreen<AcaciaEnricherContaine
         int i = (this.width - this.xSize) / 2;
         int j = (this.height - this.ySize) / 2;
         this.blit(matrixStack, i, j, 0, 0, this.xSize, this.ySize);
+
+        if(!this.container.getSlot(0).getHasStack())
+            this.blit(matrixStack, i+52, j+31, 176, 0, 15, 15);
+
+        int p = getProgress();
+        this.blit(matrixStack, i+156, j+10+p, 192, p, 4, 55-p);
+    }
+
+    int i = 55;
+    int step = 0;
+    private int getProgress() {
+        if(step++ > 5)
+            step = 0;
+        if (step == 0) {
+            if (i-- < 0)
+                i = 55;
+        }
+        return i;
     }
 }
