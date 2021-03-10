@@ -100,8 +100,7 @@ public class AcaciaEnricherTileEntity extends TileEntity implements ITickableTil
                     ItemStack stack = decrStackSize(1, 1);
                     int power = AcaciaEnricherContainer.AUTHORIZED_BLOCKS.indexOf(stack.getItem());
                     int xp = (int) Math.pow(9, power);
-                    NBTTag<IntNBT> xpTag = new NBTTag<>(items.get(0), AcaciAxe.XP_KEY, IntNBT.valueOf(0));
-                    xpTag.set(IntNBT.valueOf(xpTag.get().getInt() + xp));
+                    ((AcaciAxe) ModItems.ACACIAXE.get()).addXp(getStackInSlot(0), xp);
                 }
             } else {
                 enrichTime = 0;

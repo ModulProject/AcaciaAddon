@@ -41,10 +41,8 @@ public class AcaciAxe extends AxeItem {
 
     @Override
     public boolean onBlockDestroyed(ItemStack stack, World worldIn, BlockState state, BlockPos pos, LivingEntity entityLiving) {
-        if(state.getBlock().equals(Blocks.ACACIA_LOG)) {
-            NBTTag<IntNBT> xp = new NBTTag<>(stack, XP_KEY, IntNBT.valueOf(0));
-            xp.set(IntNBT.valueOf(xp.get().getInt()+1));
-        }
+        if(state.getBlock().equals(Blocks.ACACIA_LOG))
+            addXp(stack, 1);
         return super.onBlockDestroyed(stack, worldIn, state, pos, entityLiving);
     }
 
@@ -102,6 +100,13 @@ public class AcaciAxe extends AxeItem {
             return 0;
         return LEVEL_XP[level];
     }
+
+    public void addXp(ItemStack stack, int amount){
+        NBTTag<IntNBT> xp = new NBTTag<>(stack, XP_KEY, IntNBT.valueOf(0));
+        if(xp.get().getInt()>=0 && xp.get().getInt()+amount>0)
+            xp.set(IntNBT.valueOf(xp.get().getInt()+amount));
+    }
+
 
     private void loadEfficiencies() {
         try {
