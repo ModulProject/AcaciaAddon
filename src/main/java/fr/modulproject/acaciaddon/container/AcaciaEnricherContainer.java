@@ -80,44 +80,51 @@ public class AcaciaEnricherContainer extends Container {
 
     @Override
     public ItemStack transferStackInSlot(PlayerEntity playerIn, int index) {
-        ItemStack stack = ItemStack.EMPTY;
+        ItemStack itemstack = ItemStack.EMPTY;
         Slot slot = this.inventorySlots.get(index);
-        if(slot != null && slot.getHasStack()) {
-            ItemStack stack1 = slot.getStack();
-            stack = stack1.copy();
-            ItemStack slot0 = this.acaciaEnricherInventory.getStackInSlot(0);
-            ItemStack slot1 = this.acaciaEnricherInventory.getStackInSlot(1);
-
-            if(index != 0 && index != 1) {
-                if(!slot0.isEmpty() && !slot1.isEmpty()) {
-                    if(index >= 2 && index < 29) {
-                        if(!this.mergeItemStack(stack1, 30, 39, false)) {
-                            return ItemStack.EMPTY;
-                        }
-                    } else if(index >= 29 && index < 38 && !this.mergeItemStack(stack1, 3, 30, false)) {
+        if (slot != null && slot.getHasStack()) {
+            ItemStack itemstack1 = slot.getStack();
+            itemstack = itemstack1.copy();
+            if (index != 0 && index != 1) {
+                if (itemstack1.getStack().getItem().equals(ModItems.ACACIAXE.get())) {
+                    if (!this.mergeItemStack(itemstack1, 0, 1, false)) {
                         return ItemStack.EMPTY;
                     }
-                }else if(!this.mergeItemStack(stack1, 0, 1, false)) {
+                } else if (AcaciaEnricherContainer.AUTHORIZED_BLOCKS.contains(itemstack1.getItem())) {
+                    if (!this.mergeItemStack(itemstack1, 1, 2, false)) {
+                        return ItemStack.EMPTY;
+                    }
+                } else if (index < 29) {
+                    if (!this.mergeItemStack(itemstack1, 29, 38, false)) {
+                        return ItemStack.EMPTY;
+                    }
+                } else if (index < 38 && !this.mergeItemStack(itemstack1, 2, 29, false)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (!this.mergeItemStack(stack1, 2, 38, false)) {
+            } else if(index == 0) {
+                if(!this.mergeItemStack(itemstack1, 29, 38, false)) {
+                    if(!this.mergeItemStack(itemstack1, 2, 29, false)) {
+                        return ItemStack.EMPTY;
+                    }
+                }
+            } else if (!this.mergeItemStack(itemstack1, 2, 38, false)) {
                 return ItemStack.EMPTY;
             }
 
-            if(stack1.isEmpty()) {
+            if (itemstack1.isEmpty()) {
                 slot.putStack(ItemStack.EMPTY);
             } else {
                 slot.onSlotChanged();
             }
 
-            if(stack1.getCount() == stack.getCount()) {
+            if (itemstack1.getCount() == itemstack.getCount()) {
                 return ItemStack.EMPTY;
             }
 
-            slot.onTake(playerIn, stack1);
+            slot.onTake(playerIn, itemstack1);
         }
 
-        return stack;
+        return itemstack;
     }
 
     @OnlyIn(Dist.CLIENT)
