@@ -6,11 +6,11 @@ import fr.modulproject.acaciaddon.init.ModItems;
 import fr.modulproject.acaciaddon.init.ModTileEntities;
 import fr.modulproject.acaciaddon.item.AcaciAxe;
 import fr.modulproject.acaciaddon.utils.NBTTag;
-import net.minecraft.block.AbstractFurnaceBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.INamedContainerProvider;
@@ -19,18 +19,21 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.IntNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.IIntArray;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by Corentin on 09/03/2021 at 18:31
  */
 
-public class AcaciaEnricherTileEntity extends TileEntity implements ITickableTileEntity, INamedContainerProvider, IInventory {
+public class AcaciaEnricherTileEntity extends TileEntity implements ITickableTileEntity, INamedContainerProvider, IInventory, ISidedInventory {
 
     public static final ITextComponent CONTAINER_NAME = new TranslationTextComponent("container.acacia_enricher");
     public static final int ENRICH_TIME = 300;
@@ -167,4 +170,23 @@ public class AcaciaEnricherTileEntity extends TileEntity implements ITickableTil
         this.items.clear();
     }
 
+    @Override
+    public int[] getSlotsForFace(Direction side) {
+        if(side == Direction.UP || side == Direction.NORTH || side == Direction.SOUTH || side == Direction.EAST || side == Direction.WEST)
+            return new int[] {1};
+        return new int[0];
+    }
+
+    @Override
+    public boolean canInsertItem(int index, ItemStack itemStackIn, @Nullable Direction direction) {
+        if(Arrays.stream(getSlotsForFace(direction)).anyMatch(value -> value == index)) {
+            return AcaciaEnricherContainer.AUTHORIZED_BLOCKS.contains(itemStackIn.getItem());
+        }
+        return false;
+    }
+
+    @Override
+    public boolean canExtractItem(int index, ItemStack stack, Direction direction) {
+        return false;
+    }
 }
