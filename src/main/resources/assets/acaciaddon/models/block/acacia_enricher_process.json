@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "top": "acaciaddon:block/acacia_enricher_top",
+    "front": "acaciaddon:block/acacia_enricher_front_process",
+    "side": "acaciaddon:block/acacia_enricher_side",
+    "bottom": "#side"
+  }
+}

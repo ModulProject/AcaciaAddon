@@ -1,5 +1,6 @@
 package fr.modulproject.acaciaddon.item;
 
+import fr.modulproject.acaciaddon.utils.AAItemTier;
 import fr.modulproject.acaciaddon.utils.AcaciAddonCreativeTab;
 import fr.modulproject.acaciaddon.utils.NBTTag;
 import net.minecraft.block.Block;
@@ -8,7 +9,9 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.AxeItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.IntNBT;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;

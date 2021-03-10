@@ -1,7 +1,7 @@
 package fr.modulproject.acaciaddon.init;
 
 import fr.modulproject.acaciaddon.Main;
-import fr.modulproject.acaciaddon.containers.AcaciaEnricherContainer;
+import fr.modulproject.acaciaddon.container.AcaciaEnricherContainer;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;

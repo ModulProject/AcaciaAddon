@@ -1,18 +1,33 @@
 {
   "variants": {
-    "facing=east": {
+    "facing=east,process=false": {
       "model": "acaciaddon:block/acacia_enricher",
       "y": 90
     },
-    "facing=north": {
+    "facing=east,process=true": {
+      "model": "acaciaddon:block/acacia_enricher_process",
+      "y": 90
+    },
+    "facing=north,process=false": {
       "model": "acaciaddon:block/acacia_enricher"
     },
-    "facing=south": {
+    "facing=north,process=true": {
+      "model": "acaciaddon:block/acacia_enricher_process"
+    },
+    "facing=south,process=false": {
       "model": "acaciaddon:block/acacia_enricher",
       "y": 180
     },
-    "facing=west": {
+    "facing=south,process=true": {
+      "model": "acaciaddon:block/acacia_enricher_process",
+      "y": 180
+    },
+    "facing=west,process=false": {
       "model": "acaciaddon:block/acacia_enricher",
+      "y": 270
+    },
+    "facing=west,process=true": {
+      "model": "acaciaddon:block/acacia_enricher_process",
       "y": 270
     }
   }

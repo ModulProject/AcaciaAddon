@@ -1,4 +1,4 @@
-package fr.modulproject.acaciaddon.item;
+package fr.modulproject.acaciaddon.utils;
 
 import fr.modulproject.acaciaddon.init.ModBlocks;
 import net.minecraft.item.IItemTier;
