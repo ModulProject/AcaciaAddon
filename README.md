@@ -19,7 +19,7 @@ Simple Compressed Acacia :
 ![Simple Compressed Acacia](img/Simple_Compressed_Acacia.png)
 
 Double Compressed Acacia :
-![Simple Compressed Acacia](img/Double_Compressed_Acacia.png)
+![Double Compressed Acacia](img/Double_Compressed_Acacia.png)
 
 Acacia Stick :
 ![Acacia Stick](img/Acacia_Stick.png)
