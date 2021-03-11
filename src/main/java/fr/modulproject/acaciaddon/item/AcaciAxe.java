@@ -7,7 +7,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.AxeItem;
@@ -120,9 +119,11 @@ public class AcaciAxe extends AxeItem {
 
     private void loadEfficiencies() {
         try {
-            Field mField = AxeItem.class.getDeclaredField("EFFECTIVE_ON_MATERIALS");
+            //Field mField = AxeItem.class.getDeclaredField("EFFECTIVE_ON_MATERIALS");
+            Field mField = AxeItem.class.getDeclaredField("field_234662_c_");
             mField.setAccessible(true);
-            Field bField = AxeItem.class.getDeclaredField("EFFECTIVE_ON_BLOCKS");
+            //Field bField = AxeItem.class.getDeclaredField("EFFECTIVE_ON_BLOCKS");
+            Field bField = AxeItem.class.getDeclaredField("field_150917_d_");
             bField.setAccessible(true);
 
             EFFECTIVE_ON_MATERIALS = (Set<Material>) mField.get(null);

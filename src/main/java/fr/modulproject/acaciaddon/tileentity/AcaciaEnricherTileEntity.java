@@ -5,7 +5,6 @@ import fr.modulproject.acaciaddon.container.AcaciaEnricherContainer;
 import fr.modulproject.acaciaddon.init.ModItems;
 import fr.modulproject.acaciaddon.init.ModTileEntities;
 import fr.modulproject.acaciaddon.item.AcaciAxe;
-import fr.modulproject.acaciaddon.utils.NBTTag;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -16,7 +15,6 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.nbt.IntNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
@@ -26,7 +24,6 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
