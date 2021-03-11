@@ -13,9 +13,9 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.0'
+version= "1.0"
 group = 'fr.modulprojet.acaciaddon'
-archivesBaseName = 'acaciaddon'
+archivesBaseName = 'AcaciAddon-1.16.5'
 
 
 processResources {
