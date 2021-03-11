@@ -7,12 +7,14 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.IntNBT;
+import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -41,8 +43,16 @@ public class AcaciAxe extends AxeItem {
 
     @Override
     public boolean onBlockDestroyed(ItemStack stack, World worldIn, BlockState state, BlockPos pos, LivingEntity entityLiving) {
+        NBTTag<IntNBT> xpTag = new NBTTag<>(stack, XP_KEY, IntNBT.valueOf(0));
+        int xp = xpTag.get().getInt();
+        int level = getLevel(xp);
         if(state.getBlock().equals(Blocks.ACACIA_LOG))
             addXp(stack, 1);
+        xpTag = new NBTTag<>(stack, XP_KEY, IntNBT.valueOf(0));
+        xp = xpTag.get().getInt();
+        if(getLevel(xp)>level) {
+            entityLiving.sendMessage(new StringTextComponent("You upgrade your AcaciAxe to lvl " + (level+1)), Util.DUMMY_UUID);
+        }
         return super.onBlockDestroyed(stack, worldIn, state, pos, entityLiving);
     }
 

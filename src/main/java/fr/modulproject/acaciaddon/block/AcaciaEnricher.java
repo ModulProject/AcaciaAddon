@@ -38,24 +38,12 @@ public class AcaciaEnricher extends ContainerBlock {
         this.setDefaultState(this.getDefaultState().with(FACING, Direction.NORTH).with(PROCESS, false));
     }
 
-    public void onBlockPlacedBy(World worldIn, BlockPos pos, BlockState state, LivingEntity placer, ItemStack stack) {
-        if (stack.hasDisplayName()) {
-            TileEntity tileentity = worldIn.getTileEntity(pos);
-            /*if (tileentity instanceof AbstractFurnaceTileEntity) {
-                ((AbstractFurnaceTileEntity)tileentity).setCustomName(stack.getDisplayName());
-            }*/
-        }
-
-    }
 
     public void onReplaced(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
         if (!state.isIn(newState.getBlock())) {
             TileEntity tileentity = worldIn.getTileEntity(pos);
-            if (tileentity instanceof AbstractFurnaceTileEntity) {
-                InventoryHelper.dropInventoryItems(worldIn, pos, (AbstractFurnaceTileEntity)tileentity);
-                ((AbstractFurnaceTileEntity)tileentity).grantStoredRecipeExperience(worldIn, Vector3d.copyCentered(pos));
-                worldIn.updateComparatorOutputLevel(pos, this);
-            }
+            if (tileentity instanceof AcaciaEnricherTileEntity)
+                InventoryHelper.dropInventoryItems(worldIn, pos, (AcaciaEnricherTileEntity)tileentity);
 
             super.onReplaced(state, worldIn, pos, newState, isMoving);
         }
